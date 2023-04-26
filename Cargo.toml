@@ -1,0 +1,18 @@
+[package]
+name = "rust-proc-injection"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "libc"
+path = "src/bin/libc.rs"
+
+[[bin]]
+name = "nix"
+path = "src/bin/nix.rs"
+
+[dependencies]
+libc = { version = "0.2.142", default-features = false }
+nix = { version = "0.26.2", default-features = false, features = ["ptrace"] }
